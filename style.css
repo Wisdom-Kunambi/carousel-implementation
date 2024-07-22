@@ -1,0 +1,96 @@
+:root {
+    --xspace: 5px;
+    --vw-width: calc(100vw - 18px);
+}
+
+h2 {
+    text-align: center;
+}
+
+.carousel-container {
+    overflow: hidden;
+    max-width: 80%;
+    margin: 3vh auto;
+}
+
+.carousel {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.carousel .accordion_li {
+    flex: 0 0 auto;
+    width: calc((var(--vw-width) - (var(--xspace) * 2)) / 2);
+    transition: width 0.5s;
+}
+
+.carousel .accordion_li .bg-image {
+    height: 30vh;
+    display: flex;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.carousel .accordion_li img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.pv-content {
+    padding: 10px;
+}
+
+/* Media Queries for responsiveness */
+@media (min-width: 576px) {
+    .carousel .accordion_li {
+        width: calc((var(--vw-width) - (var(--xspace) * 2)) / 3);
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel .accordion_li {
+        width: calc((var(--vw-width) - (var(--xspace) * 2)) / 4);
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel .accordion_li {
+        width: calc((var(--vw-width) - (var(--xspace) * 2)) / 5);
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel .accordion_li {
+        width: calc((var(--vw-width) - (var(--xspace) * 2)) / 6);
+    }
+    
+    .carousel .accordion_li:hover {
+        width: calc((var(--vw-width) - (var(--xspace) * 2)) / 3);
+    }
+}
+
+/* Hover effect only for devices that support hover */
+@media (hover: hover) {
+    .carousel .accordion_li:hover {
+        width: calc((var(--vw-width) - (var(--xspace) * 2)) / 2.5);
+    }
+}
